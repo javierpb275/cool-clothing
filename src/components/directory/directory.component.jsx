@@ -1,3 +1,5 @@
+//This Directory component is in charge of displaying the MenuItem component and each section represents a MenuItem.
+
 import React from 'react';
 
 //COMPONENTS:
