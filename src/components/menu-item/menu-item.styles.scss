@@ -8,6 +8,8 @@
     justify-content: center;
     border: 1px solid black;
     margin: 0 7.5px 15px;
+    background-position: center;//We want our background image to be in the center
+    background-size: cover;//We want our background image to cover the whole thing
   
     //This is accessing to the first-child of the .menu-item:
     &:first-child {//This is the equivalent of ".menu-item:first-child {}"
