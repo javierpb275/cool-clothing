@@ -1,6 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+//React-Router-Dom:
+
+//STYLES:
 import './index.css';
+
+//COMPONENTS
 import App from './App';
 
 
