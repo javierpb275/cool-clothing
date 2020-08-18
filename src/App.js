@@ -1,7 +1,7 @@
 import React from 'react';
 
 //React-Router-Dom:
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 
 //STYLES:
 import './App.css';
@@ -19,6 +19,9 @@ const HatsPage = () => (
 function App() {
   return (
     <div>
+      <Link to='/hats'>
+      <h1>HATSPAGE</h1>
+      </Link>
       <Switch>
       <Route  exact path='/' component={HomePage} />
       <Route  path='/hats' component={HatsPage} />
