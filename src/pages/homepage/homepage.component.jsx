@@ -6,11 +6,8 @@ import Directory from '../../components/directory/directory.component';
 //STYLES:
 import './homepage.styles.scss';
 
-const HomePage = (props) => (
+const HomePage = () => (
     <div className='homepage'>
-    <button onClick={() => props.history.push('/hats')}>
-      <h1>HATSPAGE</h1>
-      </button>
         <Directory/>    
     </div>
 );
