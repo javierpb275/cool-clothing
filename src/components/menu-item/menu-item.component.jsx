@@ -1,6 +1,9 @@
 //This menu-item component is each of the images that you see in the homepage, inside of the directory component:
 import React from 'react';
 
+//REACT-ROUTER-DOM:
+import { withRouter } from 'react-router-dom';
+
 //STYLES:
 import './menu-item.styles.scss';
 
