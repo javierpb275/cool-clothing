@@ -1,3 +1,5 @@
+//This is the main page of our App
+
 import React from 'react';
 
 //COMPONENTS:
