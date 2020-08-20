@@ -16,4 +16,12 @@ class ShopPage extends React.Component {
         }
 
     }
+
+    render() {
+        return (
+            <div>SHOP PAGE</div>
+        )
+    }
 }
+
+export default ShopPage;
