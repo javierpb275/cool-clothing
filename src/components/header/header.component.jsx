@@ -5,13 +5,17 @@ import React from 'react';
 //React-Router-Dom:
 import { Link } from 'react-router-dom';
 
+//ASSETS:
+import Logo from '../../assets/logo-cool-clothing.png';
+
 //STYLES: 
 import './header.styles.scss';
 
 const Header = () => (
     <div className='header'>
-        <Link to='/'>LOGO</Link>
-
+        <Link className='logo-container' to='/' >
+        <div className='logo'>{Logo}</div>
+        </Link>
     </div>
 );
 
