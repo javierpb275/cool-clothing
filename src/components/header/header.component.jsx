@@ -2,11 +2,17 @@
 
 import React from 'react';
 
+//React-Router-Dom:
+import { Link } from 'react-router-dom';
+
 //STYLES: 
 import './header.styles.scss';
 
 const Header = () => (
-    <div></div>
+    <div className='header'>
+        <Link to='/'>LOGO</Link>
+
+    </div>
 );
 
 export default Header;
