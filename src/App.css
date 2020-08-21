@@ -2,3 +2,7 @@ body {
     font-family: 'Monoton', cursive;
     padding: 20px, 60px;/*20px: top and bottom. 60px: right and left*/
 }
+
+a {
+    text-decoration: none;
+}
