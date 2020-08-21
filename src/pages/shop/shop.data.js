@@ -4,245 +4,155 @@
 const SHOP_DATA = [
     {
       id: 1,
-      title: 'Hats',
-      routeName: 'hats',
+      title: 'gloves',
+      routeName: 'gloves',
       items: [
         {
           id: 1,
-          name: 'Brown Brim',
-          imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
+          name: 'DC Ski/Snowboard Gloves',
+          imageUrl: 'https://absolute-snow.cdn.rlab.net/Larger/8ef7a9a8-df6e-43c8-8a9f-d86e2930ed16edyhn03034_industryglovep_cjz0_frt1.jpg',
           price: 25
         },
         {
           id: 2,
-          name: 'Blue Beanie',
-          imageUrl: 'https://i.ibb.co/ypkgK0X/blue-beanie.png',
+          name: 'D-IMPACT 13 D-DRY® GLOVE',
+          imageUrl: 'https://dainese-cdn.thron.com/delivery/public/image/dainese/72af43bb-4c34-4edf-b74d-1d549f838f2e/ramfdh/std/615x615/d-impact-13-d.jpg',
           price: 18
         },
         {
           id: 3,
-          name: 'Brown Cowboy',
-          imageUrl: 'https://i.ibb.co/QdJwgmp/brown-cowboy.png',
+          name: 'Touch Screen Ski & Snow Gloves',
+          imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/91uT2Ac0ELL._AC_SX425_.jpg',
           price: 35
         },
         {
           id: 4,
-          name: 'Grey Brim',
-          imageUrl: 'https://i.ibb.co/RjBLWxB/grey-brim.png',
+          name: 'ROCKBROS Waterproof Ski 30 Gloves',
+          imageUrl: 'https://ae01.alicdn.com/kf/H8a86d4a0ee4b4564a23f737640534dc7C/ROCKBROS-Waterproof-Ski-30-Gloves-Winter-Windproof-Snowmobile-Snowboard-Gloves-Snow-Men-Women-Snowboarding-girls-Skiing.jpg_q50.jpg',
           price: 25
-        },
-        {
-          id: 5,
-          name: 'Green Beanie',
-          imageUrl: 'https://i.ibb.co/YTjW3vF/green-beanie.png',
-          price: 18
-        },
-        {
-          id: 6,
-          name: 'Palm Tree Cap',
-          imageUrl: 'https://i.ibb.co/rKBDvJX/palm-tree-cap.png',
-          price: 14
-        },
-        {
-          id: 7,
-          name: 'Red Beanie',
-          imageUrl: 'https://i.ibb.co/bLB646Z/red-beanie.png',
-          price: 18
-        },
-        {
-          id: 8,
-          name: 'Wolf Cap',
-          imageUrl: 'https://i.ibb.co/1f2nWMM/wolf-cap.png',
-          price: 14
-        },
-        {
-          id: 9,
-          name: 'Blue Snapback',
-          imageUrl: 'https://i.ibb.co/X2VJP2W/blue-snapback.png',
-          price: 16
         }
       ]
     },
     {
       id: 2,
-      title: 'Sneakers',
-      routeName: 'sneakers',
+      title: 'pants',
+      routeName: 'pants',
       items: [
         {
           id: 10,
-          name: 'Adidas NMD',
-          imageUrl: 'https://i.ibb.co/0s3pdnc/adidas-nmd.png',
+          name: 'Dope Iconic Snow Pants Black',
+          imageUrl: 'https://ridestore.imgix.net/catalog/product/E/5/E5993_1.jpg',
           price: 220
         },
         {
           id: 11,
-          name: 'Adidas Yeezy',
-          imageUrl: 'https://i.ibb.co/dJbG1cT/yeezy.png',
+          name: 'High Quality Snowboard Pants',
+          imageUrl: 'https://ae01.alicdn.com/kf/HTB1DtOqX6LuK1Rjy0Fhq6xpdFXav/Newest-High-Quality-Snowboard-Pants-for-Men-Waterproof-Skiing-and-Snowboarding-Snow-Pant-Breathable-Ski-Pants.jpg',
           price: 280
         },
         {
           id: 12,
-          name: 'Black Converse',
-          imageUrl: 'https://i.ibb.co/bPmVXyP/black-converse.png',
+          name: 'Adidas Snowboarding',
+          imageUrl: 'https://ridestore.imgix.net/catalog/product/E/4/E4279_1.jpg',
           price: 110
         },
         {
           id: 13,
-          name: 'Nike White AirForce',
-          imageUrl: 'https://i.ibb.co/1RcFPk0/white-nike-high-tops.png',
+          name: 'Partner Snowboard Pants',
+          imageUrl: 'https://www.thesnowboardshop.co.uk/images/partner-snowboard-pants-p3615-6160_image.jpg',
           price: 160
-        },
-        {
-          id: 14,
-          name: 'Nike Red High Tops',
-          imageUrl: 'https://i.ibb.co/QcvzydB/nikes-red.png',
-          price: 160
-        },
-        {
-          id: 15,
-          name: 'Nike Brown High Tops',
-          imageUrl: 'https://i.ibb.co/fMTV342/nike-brown.png',
-          price: 160
-        },
-        {
-          id: 16,
-          name: 'Air Jordan Limited',
-          imageUrl: 'https://i.ibb.co/w4k6Ws9/nike-funky.png',
-          price: 190
-        },
-        {
-          id: 17,
-          name: 'Timberlands',
-          imageUrl: 'https://i.ibb.co/Mhh6wBg/timberlands.png',
-          price: 200
         }
       ]
     },
     {
       id: 3,
-      title: 'Jackets',
+      title: 'jackets',
       routeName: 'jackets',
       items: [
         {
           id: 18,
-          name: 'Black Jean Shearling',
-          imageUrl: 'https://i.ibb.co/XzcwL5s/black-shearling.png',
+          name: 'Burton Snowboards US',
+          imageUrl: 'https://www.burton.com/static/product/W21/13067105001_5.png',
           price: 125
         },
         {
           id: 19,
-          name: 'Blue Jean Jacket',
-          imageUrl: 'https://i.ibb.co/mJS6vz0/blue-jean-jacket.png',
+          name: 'Psycho Tech Anorak Ski Jacket',
+          imageUrl: 'https://www.oneill.com/dw/image/v2/AAOU_PRD/on/demandware.static/-/Sites-master-catalog/default/dw34723c28/images_19/9P0/9P0006_9010_MODEL_1.JPG?sw=642&sh=987',
           price: 90
         },
         {
           id: 20,
-          name: 'Grey Jean Jacket',
-          imageUrl: 'https://i.ibb.co/N71k1ML/grey-jean-jacket.png',
+          name: ' Dope Rambler Jacket Black',
+          imageUrl: 'https://ridestore.imgix.net/catalog/product/E/6/E6487_1.jpg',
           price: 90
         },
         {
           id: 21,
-          name: 'Brown Shearling',
-          imageUrl: 'https://i.ibb.co/s96FpdP/brown-shearling.png',
+          name: 'Burton Snowboards CA',
+          imageUrl: 'https://www.burton.com/static/product/W20/10001106300_5.png',
           price: 165
-        },
-        {
-          id: 22,
-          name: 'Tan Trench',
-          imageUrl: 'https://i.ibb.co/M6hHc3F/brown-trench.png',
-          price: 185
         }
       ]
     },
     {
       id: 4,
-      title: 'Womens',
-      routeName: 'womens',
+      title: 'boots',
+      routeName: 'boots',
       items: [
         {
           id: 23,
-          name: 'Blue Tanktop',
-          imageUrl: 'https://i.ibb.co/7CQVJNm/blue-tank.png',
+          name: ' Boots Strong ATOP',
+          imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/61aB9JNYf8L._AC_SY355_.jpg',
           price: 25
         },
         {
           id: 24,
-          name: 'Floral Blouse',
-          imageUrl: 'https://i.ibb.co/4W2DGKm/floral-blouse.png',
+          name: 'Salomon Boots',
+          imageUrl: 'https://i.ebayimg.com/images/g/i40AAOSwOZBdRZN6/s-l300.jpg',
           price: 20
         },
         {
           id: 25,
-          name: 'Floral Dress',
-          imageUrl: 'https://i.ibb.co/KV18Ysr/floral-skirt.png',
+          name: 'Samba Boots',
+          imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/71Yiu8J-JzL._AC_SY355_.jpg',
           price: 80
         },
         {
           id: 26,
-          name: 'Red Dots Dress',
-          imageUrl: 'https://i.ibb.co/N3BN1bh/red-polka-dot-dress.png',
+          name: 'DC Mutiny',
+          imageUrl: 'https://www.expocafeperu.com/w/2019/12/dc-mutiny-2019-review-dc-womens-snowboard-boots-dc-judge-boa-snowboard-boots-dc-snowboard-boots-review.jpg',
           price: 80
-        },
-        {
-          id: 27,
-          name: 'Striped Sweater',
-          imageUrl: 'https://i.ibb.co/KmSkMbH/striped-sweater.png',
-          price: 45
-        },
-        {
-          id: 28,
-          name: 'Yellow Track Suit',
-          imageUrl: 'https://i.ibb.co/v1cvwNf/yellow-track-suit.png',
-          price: 135
-        },
-        {
-          id: 29,
-          name: 'White Blouse',
-          imageUrl: 'https://i.ibb.co/qBcrsJg/white-vest.png',
-          price: 20
         }
       ]
     },
     {
       id: 5,
-      title: 'Mens',
-      routeName: 'mens',
+      title: 'snowboards',
+      routeName: 'snowboards',
       items: [
         {
           id: 30,
-          name: 'Camo Down Vest',
-          imageUrl: 'https://i.ibb.co/xJS0T3Y/camo-vest.png',
+          name: 'Jones Snowboard',
+          imageUrl: 'https://www.zerogchamonix.com/20640/jones-snowboards-frontier-mens-snowboards-sj200121-3-36081.jpg',
           price: 325
         },
         {
           id: 31,
-          name: 'Floral T-shirt',
-          imageUrl: 'https://i.ibb.co/qMQ75QZ/floral-shirt.png',
+          name: 'Afterblack Snowboard',
+          imageUrl: 'https://images.evo.com/imgp/700/161755/647094/clone.jpg',
           price: 20
         },
         {
           id: 32,
-          name: 'Black & White Longsleeve',
-          imageUrl: 'https://i.ibb.co/55z32tw/long-sleeve.png',
+          name: 'Burton Snowboard',
+          imageUrl: 'https://www.greatoutdoorshop.com/wp-content/uploads/2019/10/2020-burton-snowboards-womens-hideaway-snowboard.jpg-1000.jpg',
           price: 25
         },
         {
           id: 33,
-          name: 'Pink T-shirt',
-          imageUrl: 'https://i.ibb.co/RvwnBL8/pink-shirt.png',
-          price: 25
-        },
-        {
-          id: 34,
-          name: 'Jean Long Sleeve',
-          imageUrl: 'https://i.ibb.co/VpW4x5t/roll-up-jean-shirt.png',
-          price: 40
-        },
-        {
-          id: 35,
-          name: 'Burgundy T-shirt',
-          imageUrl: 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
+          name: 'Public Snowboard',
+          imageUrl: 'https://images.evo.com/imgp/zoom/163175/671003/public-snowboards-general-snowboard-2020-.jpg',
           price: 25
         }
       ]

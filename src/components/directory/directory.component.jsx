@@ -14,36 +14,36 @@ class Directory extends React.Component {
         this.state = {
             sections: [
                 {
-                    title: 'hats',
-                    imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+                    title: 'gloves',
+                    imageUrl: 'https://onlinebest.ca/wp-content/uploads/2019/04/7-Best-Heated-Ski-Gloves-for-Men-and-Women-930x620.jpg',
                     id: 1,
-                    linkUrl: 'shop/hats'
+                    linkUrl: 'shop/gloves'
                   },
                   {
                     title: 'jackets',
-                    imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+                    imageUrl: 'https://ridestore.imgix.net/catalog/product/e/6/e6208_20_1_2.jpg?w=320&auto=format&q=50',
                     id: 2,
                     linkUrl: 'shop/jackets'
                   },
                   {
-                    title: 'sneakers',
-                    imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+                    title: 'pants',
+                    imageUrl: 'https://ae01.alicdn.com/kf/H31058872bf71445591280080da798396i.jpg',
                     id: 3,
-                    linkUrl: 'shop/sneakers'
+                    linkUrl: 'shop/pants'
                   },
                   {
-                    title: 'womens',
-                    imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+                    title: 'boots',
+                    imageUrl: 'https://cdn.trendhunterstatic.com/thumbs/adidas-snowboarding-boots.jpeg',
                     size: 'large',
                     id: 4,
-                    linkUrl: 'shop/womens'
+                    linkUrl: 'shop/boots'
                   },
                   {
-                    title: 'mens',
-                    imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+                    title: 'snowboards',
+                    imageUrl: 'https://www.tactics.com/a/bke6/e/bestparksnowboards.jpg',
                     size: 'large',
                     id: 5,
-                    linkUrl: 'shop/mens'
+                    linkUrl: 'shop/snowboards'
                   }
             ]
         }
