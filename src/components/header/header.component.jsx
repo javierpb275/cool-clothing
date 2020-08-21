@@ -13,9 +13,24 @@ import './header.styles.scss';
 
 const Header = () => (
     <div className='header'>
+
         <Link className='logo-container' to='/' >
         <div className='logo'>{Logo}</div>
         </Link>
+
+
+        <div className='options'>
+
+        <Link className='option' to='/shop' >
+        SHOP
+        </Link>
+
+        <Link className='option' to='/shop' >
+        CONTACT
+        </Link>
+
+        </div>
+
     </div>
 );
 
