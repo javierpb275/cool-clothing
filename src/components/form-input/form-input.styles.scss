@@ -1,10 +1,12 @@
+//These are scss variables
 $sub-color: grey;
 $main-color: black;
 
-@mixin shrinkLabel {
+//misin are like reusable pieces of scss that we can put inside of our scss code
+@mixin shrinkLabel { //It is a way for us to include this whole block wherever we say "@include shrinkLabel();"
   top: -14px;
   font-size: 12px;
-  color: $main-color;
+  color: $main-color;//scss variable (black)
 }
 
 .group {
@@ -14,7 +16,7 @@ $main-color: black;
   .form-input {
     background: none;
     background-color: white;
-    color: $sub-color;
+    color: $sub-color;//scss variable (grey)
     font-size: 18px;
     padding: 10px 10px 10px 5px;
     display: block;
@@ -29,7 +31,7 @@ $main-color: black;
     }
 
     &:focus ~ .form-input-label {
-      @include shrinkLabel();
+      @include shrinkLabel();//It is a way for us to include this whole block wherever we say "@include shrinkLabel();"
     }
   }
 
