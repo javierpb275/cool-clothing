@@ -15,19 +15,14 @@ class SignIn extends React.Component {
         }
     }
 
-    //This function prevents the default submit action from firing because we want full control over exactly what this submit is gonna do. 
-    //And then we will clear out our fields "this.setState({ email: '', password: '' })"
+    //handleSubmit prevents the default submit action from firing and then we will clear out our fields 
     handleSubmit = event => {
         event.preventDefault();
 
         this.setState({ email: '', password: '' })
     }
 
-    //This function pulls both value and name off of our event.target (what the user types). 
-    //The event.target will end up being the <input/> element itself and we want the name on that input (name='password') 
-    //as well as the value (value={this.state.email}). And we dinamically setState so that sets that name by doing "[name]"
-    //so it will render whatever value that "name" it will be. If "name=password" it will point to password and the same with email.
-    //This way we can pass the same function to both inputs
+    //handleChange gets the input by the name (name="email") and changes its value (what the user types in)
     handleChange = event => {
         const { value, name } = event.target;
         
