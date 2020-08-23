@@ -48,7 +48,7 @@ class SignIn extends React.Component {
                     label="email"
                     required
                     />
-                    <label>Email</label>
+                    
 
                     <FormInput
                     name="password" 
@@ -58,7 +58,7 @@ class SignIn extends React.Component {
                     label="password"
                     required
                     />
-                    <label>Password</label>
+                    
 
                     <input type="submit" value="Submit Form"/>
                 </form>
