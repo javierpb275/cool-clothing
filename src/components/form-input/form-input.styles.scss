@@ -4,7 +4,7 @@ $main-color: black;
 
 //misin are like reusable pieces of scss that we can put inside of our scss code
 @mixin shrinkLabel { //It is a way for us to include this whole block wherever we say "@include shrinkLabel();"
-  top: -14px;
+  top: -14px;//move it up
   font-size: 12px;
   color: $main-color;//scss variable (black)
 }
@@ -30,7 +30,7 @@ $main-color: black;
       outline: none;
     }
 
-    &:focus ~ .form-input-label {
+    &:focus ~ .form-input-label {//Whenever the user selects or the browser focuses on that input we wanna target the .form-input-label and include shrink label
       @include shrinkLabel();//It is a way for us to include this whole block wherever we say "@include shrinkLabel();"
     }
   }
@@ -47,7 +47,7 @@ $main-color: black;
     pointer-events: none;
     left: 5px;
     top: 10px;
-    transition: 300ms ease all;
+    transition: 300ms ease all;//The moment this properties are updated, there is a transition of 300ms to that change
 
     &.shrink {
       @include shrinkLabel();
