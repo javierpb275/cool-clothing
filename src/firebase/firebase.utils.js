@@ -18,3 +18,8 @@ const config = {
 //Initialize Firebase:
 firebase.initializeApp(config);
 
+//Firebase authentication:
+export const auth = firebase.auth();
+
+//Firebase database:
+export const firestore = firebase.firestore();
