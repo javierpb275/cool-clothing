@@ -3,6 +3,7 @@ import firebase from 'firebase/app';// This is the base import of firebase which
 import 'firebase/firestore';// firestore is for the database
 import 'firebase/auth';// auth is for the authentication
 
+//My web app's Firebase configuration:
 const config = {
     apiKey: "AIzaSyD_NlIw3bo0gQ33rA2ELrGPNiJeLaAmg4s",
     authDomain: "cool-clothing-db-7b987.firebaseapp.com",
@@ -14,4 +15,6 @@ const config = {
     measurementId: "G-3YJLXHG89M"
   };
 
+//Initialize Firebase:
 firebase.initializeApp(config);
+
