@@ -15,11 +15,17 @@ const config = {
     measurementId: "G-3YJLXHG89M"
   };
 
+
 //Initialize Firebase:
 firebase.initializeApp(config);
+
 
 //Firebase authentication:
 export const auth = firebase.auth();
 
 //Firebase database:
 export const firestore = firebase.firestore();
+
+
+//This gives us access to this new GoogleAuthProvider class from the authentication library:
+const provider = new firebase.auth.GoogleAuthProvider();
