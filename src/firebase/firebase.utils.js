@@ -29,3 +29,4 @@ export const firestore = firebase.firestore();
 
 //This gives us access to this new GoogleAuthProvider class from the authentication library:
 const provider = new firebase.auth.GoogleAuthProvider();
+provider.setCustomParameters({ prompt: 'select_account' });
