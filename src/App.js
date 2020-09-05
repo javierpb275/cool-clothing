@@ -19,17 +19,20 @@ import Header from './components/header/header.component';
 
 
 
-function App() {
-  return (
-    <div>
-      <Header/>
-      <Switch>
-      <Route  exact path='/' component={HomePage} />
-      <Route  path='/shop' component={ShopPage} />
-      <Route  path='/signin' component={SignInAndSignUpPage} />
-      </Switch>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Header/>
+        <Switch>
+        <Route  exact path='/' component={HomePage} />
+        <Route  path='/shop' component={ShopPage} />
+        <Route  path='/signin' component={SignInAndSignUpPage} />
+        </Switch>
+      </div>
+    );
+  }
+  
 }
 
 export default App;
