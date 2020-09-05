@@ -3,6 +3,9 @@ import React from 'react';
 //React-Router-Dom:
 import { Switch, Route } from 'react-router-dom';
 
+//FIREBASE:
+import { auth } from './firebase/firebase.utils';
+
 //STYLES:
 import './App.css';
 
