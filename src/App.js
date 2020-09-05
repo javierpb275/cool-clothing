@@ -28,7 +28,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    
+    auth.onAuthStateChanged();
   }
 
 
