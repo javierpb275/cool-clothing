@@ -5,13 +5,16 @@ import React from 'react';
 //React-Router-Dom:
 import { Link } from 'react-router-dom';
 
+//FIREBASE:
+import { auth } from '../../firebase/firebase.utils';
+
 //ASSETS:
 import Logo from '../../assets/logo-cool-clothing.png';
 
 //STYLES: 
 import './header.styles.scss';
 
-const Header = () => (
+const Header = ({ currentUser }) => (
     <div className='header'>
 
         <Link className='logo-container' to='/' >
@@ -28,9 +31,13 @@ const Header = () => (
         <Link className='option' to='/shop' >
         CONTACT
         </Link>
-
+        {
+            currentUser ?
+            <div></div>
+            :
+            <Link></Link>
+        }
         </div>
-
     </div>
 );
 
