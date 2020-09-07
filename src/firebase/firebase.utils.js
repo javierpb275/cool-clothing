@@ -15,6 +15,10 @@ const config = {
     measurementId: "G-3YJLXHG89M"
   };
 
+  //This function allows us to take that user auth object that we got back from our authentication library 
+  //and store it inside of our database
+  export const createUserProfileDocument = async () => {}
+
 
 //Initialize Firebase:
 firebase.initializeApp(config);
