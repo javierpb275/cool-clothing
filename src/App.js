@@ -4,7 +4,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 //FIREBASE:
-import { auth } from './firebase/firebase.utils';// auth: Authentication.
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';// auth: Authentication.
 
 //STYLES:
 import './App.css';
@@ -33,9 +33,8 @@ class App extends React.Component {
 
   //This function takes care of subscribing the user:
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user});
-      console.log(user);
+    this.unsubscribeFromAuth = auth.onAuthStateChanged( async user => {
+      createUserProfileDocument(user);
     });
   }
 
