@@ -31,9 +31,9 @@ class App extends React.Component {
   //be able unsubscribe our current user:
   unsubscribeFromAuth = null;
 
-  //This function takes care of subscribing the user:
+  //This function takes care of subscribing the user: 
   componentDidMount() {
-    
+
     this.unsubscribeFromAuth = auth.onAuthStateChanged( async userAuth => {
 
       if (userAuth) {
@@ -52,6 +52,14 @@ class App extends React.Component {
         console.log(this.state);
 
       }
+
+      else {
+
+        this.setState({currentUser: userAuth});
+
+      }
+
+      
 
     });
 
