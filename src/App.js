@@ -46,12 +46,8 @@ class App extends React.Component {
               id: snapShot.id,
               ...snapShot.data()
             }
-          }, () => {
-            console.log(this.state);
           });
         });
-
-        
 
       }
 
@@ -60,8 +56,6 @@ class App extends React.Component {
         this.setState({currentUser: userAuth});
 
       }
-
-      
 
     });
 
