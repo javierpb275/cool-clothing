@@ -57,6 +57,15 @@ class SignUp extends React.Component {
 
     };
 
+
+    //handleChange gets the input by the name (name="email") and changes its value (what the user types in)
+    handleChange = event => {
+        const { value, name } = event.target;
+        
+        this.setState({[name]: value})
+    }
+
+    
     render() {
         const { displayName, email, password, confirmPassword } = this.state;
         return(
