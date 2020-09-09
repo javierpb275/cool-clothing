@@ -8,7 +8,7 @@ import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
 //FIREBASE:
-import { signInWithGoogle } from '../../firebase/firebase.utils';//Authentication
+import { auth, signInWithGoogle } from '../../firebase/firebase.utils';//Authentication
 
 //STYLES:
 import './sign-in.styles.scss';
@@ -23,11 +23,27 @@ class SignIn extends React.Component {
     }
 
     //handleSubmit prevents the default submit action from firing and then we will clear out our fields 
-    handleSubmit = event => {
+    handleSubmit = async event => {
         event.preventDefault();
 
-        this.setState({ email: '', password: '' })
-    }
+        const { email, password } = this.state;
+
+        try {
+
+            await auth.signInWithEmailAndPassword(email, password);
+            
+            this.setState({ email: '', password: '' });
+
+        }
+
+        catch(error) {
+
+            console.log(error);
+
+        }
+
+        
+    };
 
     //handleChange gets the input by the name (name="email") and changes its value (what the user types in)
     handleChange = event => {
