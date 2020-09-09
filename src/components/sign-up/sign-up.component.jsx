@@ -24,7 +24,7 @@ class SignUp extends React.Component {
         }
     }
 
-    //handleSubmit prevents the default submit action from firing 
+    //handleSubmit prevents the default submit action from firing, checks if the passwords match and then creates a new user;
     handleSubmit = async event => {
         event.preventDefault();
 
@@ -37,6 +37,8 @@ class SignUp extends React.Component {
 
         try {
             const { user } = await auth.createUserWithEmailAndPassword(email, password);
+
+            createUserProfileDocument(user, { displayName });
 
         }
 
