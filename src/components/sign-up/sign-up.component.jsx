@@ -35,7 +35,15 @@ class SignUp extends React.Component {
             return;
         }
 
-        
+        try {
+            const { user } = await auth.createUserWithEmailAndPassword(email, password);
+
+        }
+
+        catch {
+            
+        }
+
     }
 
     render() {
