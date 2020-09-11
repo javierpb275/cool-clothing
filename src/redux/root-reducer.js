@@ -1,0 +1,1 @@
+//This is the base reducer that represents all of the state of our app. This is the code that combines all of our other states together.
