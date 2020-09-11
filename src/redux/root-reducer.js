@@ -5,3 +5,7 @@ import { combineReducers } from 'redux';//combineReducers, as the name suggest, 
 
 //REDUCERS:
 import userReducer from './user/user.reducer';
+
+export default combineReducers({
+    user: userReducer
+});
