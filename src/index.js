@@ -5,7 +5,10 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
 //REDUX:
-import { Provider } from 'react-redux';//Provider: It gives us access to all of the things related to the store object (redux state)
+import { Provider } from 'react-redux';// Provider: It gives us access to all of the things related to the store object (redux state)
+
+//STORE:
+import store from './redux/store';
 
 //STYLES:
 import './index.css';
@@ -16,7 +19,7 @@ import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider>
+    <Provider store={store}>
     <BrowserRouter>
     <App />
     </BrowserRouter>
