@@ -3,6 +3,9 @@ import React from 'react';
 //React-Router-Dom:
 import { Switch, Route } from 'react-router-dom';
 
+//REDUX:
+import { connect } from 'react-redux';
+
 //FIREBASE:
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';// auth: Authentication.
 
@@ -81,4 +84,8 @@ class App extends React.Component {
   
 }
 
-export default App;
+const mapStateToProps = state => ({
+  currentUser: state.user.currentUser
+})
+
+export default connect(mapStateToProps)(App);
