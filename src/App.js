@@ -26,12 +26,7 @@ import Header from './components/header/header.component';
 
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      currentUser: null
-    }
-  }
+  
 
   //This property is used in componentDidMount() and turned into a function and then passed to the componentWillUnmount() in order to
   //be able unsubscribe our current user:
@@ -39,6 +34,7 @@ class App extends React.Component {
 
   //This function takes care of subscribing the user: 
   componentDidMount() {
+    const { setCurrentUser } = this.props;
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged( async userAuth => {
 
@@ -47,19 +43,17 @@ class App extends React.Component {
         const userRef = await createUserProfileDocument(userAuth);
 
         userRef.onSnapshot( snapShot => {
-          this.setState({
-            currentUser: {
+          setCurrentUser({
               id: snapShot.id,
               ...snapShot.data()
-            }
-          })
+            })
         });
 
       }
 
       else {
 
-        this.setState({currentUser: userAuth});
+        setCurrentUser(userAuth);
 
       }
 
