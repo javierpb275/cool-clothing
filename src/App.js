@@ -6,6 +6,9 @@ import { Switch, Route } from 'react-router-dom';
 //REDUX:
 import { connect } from 'react-redux';
 
+//REDUX ACTIONS:
+import { setCurrentUser } from './redux/user/user.actions';
+
 //FIREBASE:
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';// auth: Authentication.
 
@@ -84,8 +87,8 @@ class App extends React.Component {
   
 }
 
-const mapStateToProps = state => ({
-  currentUser: state.user.currentUser
-})
+const mapDispatchToProps = dispatch => ({
+  setCurrentUser: user => dispatch(setCurrentUser(user))
+});
 
-export default connect(mapStateToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
