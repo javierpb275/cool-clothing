@@ -1,7 +1,7 @@
 import React from 'react';
 
 //React-Router-Dom:
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 //REDUX:
 import { connect } from 'react-redux';
@@ -80,6 +80,10 @@ class App extends React.Component {
   }
   
 }
+
+const mapstateToProps = ({ user }) => ({
+  currentUser: user.currentUser
+});
 
 const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
