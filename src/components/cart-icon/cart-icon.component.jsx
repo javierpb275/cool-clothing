@@ -1,6 +1,6 @@
 //This is the cart component, which is a shopping bag where we see the number of items we added to our cart. 
 //And when we click on it, we display a dropdown menu where we see the image of our item, the quantity and the price.
-//And we can access to another page where we pay the items.
+//And we can access to the Checkout page where we pay for our items.
 
 import React from 'react';
 
