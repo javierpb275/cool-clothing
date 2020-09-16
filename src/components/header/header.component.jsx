@@ -13,6 +13,7 @@ import { auth } from '../../firebase/firebase.utils';
 
 //COMPONENTS:
 import CartIcon from '../cart-icon/cart-icon.component';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
 //ASSETS:
 import Logo from '../../assets/logo-cool-clothing.png';
@@ -47,6 +48,7 @@ const Header = ({ currentUser }) => (
         }
         <CartIcon/>
         </div>
+        <CartDropdown/>
     </div>
 );
 
