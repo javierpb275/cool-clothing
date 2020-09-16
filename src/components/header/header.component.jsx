@@ -11,6 +11,9 @@ import { connect } from 'react-redux';// "connect" is a higher order component t
 //FIREBASE:
 import { auth } from '../../firebase/firebase.utils';
 
+//COMPONENTS:
+import CartIcon from '../cart-icon/cart-icon.component';
+
 //ASSETS:
 import Logo from '../../assets/logo-cool-clothing.png';
 
@@ -42,6 +45,7 @@ const Header = ({ currentUser }) => (
                 SIGN IN
             </Link>
         }
+        <CartIcon/>
         </div>
     </div>
 );
