@@ -16,7 +16,9 @@ import './collection-item.styles.scss';
 
 
 
-const CollectionItem = ({ id, name, price, imageUrl, addItem }) => (
+const CollectionItem = ({ item, addItem }) => {
+    const { name, price, imageUrl } = item;
+    return (
     <div className='collection-item'>
         <div className='image' style={{ backgroundImage: `url(${imageUrl})` }}/>
             <div className='collection-footer'>
@@ -25,7 +27,8 @@ const CollectionItem = ({ id, name, price, imageUrl, addItem }) => (
             </div>
             <CustomButton inverted> ADD to cart</CustomButton>
     </div>
-);
+    )
+};
 
 
 
