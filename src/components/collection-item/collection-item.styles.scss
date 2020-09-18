@@ -4,6 +4,7 @@
     flex-direction: column;
     height: 350px;
     align-items: center;
+    position: relative;//With this we place the buttom where we want it. the buttom is positioned inside of our collection-item.
   
     .image {
       width: 100%;
@@ -11,6 +12,13 @@
       background-size: cover;
       background-position: center;
       margin-bottom: 5px;
+    }
+
+    .custom-button {
+      width: 80%;
+      opacity: 0.7;
+      position: absolute;//We want it to always be absolutely positioned at the bottom of our total height.
+      top: 255px;//This goes with position absolute.
     }
   
     .collection-footer {
