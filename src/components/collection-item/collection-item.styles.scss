@@ -19,6 +19,20 @@
       opacity: 0.7;
       position: absolute;//We want it to always be absolutely positioned at the bottom of our total height.
       top: 255px;//This goes with position absolute.
+      display:none;
+    }
+
+    &:hover {
+      
+      .image {
+        opacity: 0.8;
+      }
+
+      .custom-button {
+        opacity: 0.85;
+        display: flex;
+      }
+
     }
   
     .collection-footer {
