@@ -14,6 +14,8 @@ import { addItem } from '../../redux/cart/cart.actions';
 //STYLES:
 import './collection-item.styles.scss';
 
+
+
 const CollectionItem = ({ id, name, price, imageUrl }) => (
     <div className='collection-item'>
         <div className='image' style={{ backgroundImage: `url(${imageUrl})` }}/>
@@ -27,4 +29,10 @@ const CollectionItem = ({ id, name, price, imageUrl }) => (
 
 
 
-export default CollectionItem;
+const mapDispatchToProps = dispatch => ({
+    addItem: item => dispatch(addItem(item))
+});
+
+
+
+export default connect(null, mapDispatchToProps)(CollectionItem);
