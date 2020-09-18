@@ -7,6 +7,7 @@ const INITIAL_STATE = {
     cartItems: []
 }
 
+
 //The cart reducer will take care of all the functionality of our cart-icon component:
 const cartReducer = (state = INITIAL_STATE, action) => {
     switch(action.type) {
@@ -15,10 +16,16 @@ const cartReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 hidden: !state.hidden
             }
+        case CartActionTypes.ADD_ITEM:
+            return {
+                ...state,
+                cartItems: [...state.cartItems, action.payload]
+            }
 
             default:
                 return state;
     }
 }
+
 
 export default cartReducer;
