@@ -3,7 +3,8 @@ import { CartActionTypes } from './cart.types'
 
 //This is the initial state of this reducer:
 const INITIAL_STATE = {
-    hidden: true
+    hidden: true,
+    cartItems: []
 }
 
 //The cart reducer will take care of all the functionality of our cart-icon component:
