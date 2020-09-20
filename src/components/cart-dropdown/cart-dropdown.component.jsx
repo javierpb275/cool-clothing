@@ -15,13 +15,18 @@ import './cart-dropdown.styles.scss';
 
 
 
-const CartDropdown = () => (
+const CartDropdown = ({ cartItems }) => (
     <div className='cart-dropdown'>
-        <div className='cart-items'/>
+        <div className='cart-items'>
+            
+        </div>
         <CustomButton>GO TO CHECKOUT</CustomButton>
     </div>
 );
 
 
+const mapStateToProps = ({ cart: { cartItems }}) => ({
+    cartItems
+});
 
-export default CartDropdown;
+export default connect(mapStateToProps)(CartDropdown);
