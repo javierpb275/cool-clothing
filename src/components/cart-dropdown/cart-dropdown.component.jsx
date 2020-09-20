@@ -18,14 +18,17 @@ import './cart-dropdown.styles.scss';
 const CartDropdown = ({ cartItems }) => (
     <div className='cart-dropdown'>
         <div className='cart-items'>
-            
+            {
+                cartItems.map(cartItem => 
+                <CartItem key={cartItem.id} item={CartItem}/>)
+            }
         </div>
         <CustomButton>GO TO CHECKOUT</CustomButton>
     </div>
 );
 
 
-const mapStateToProps = ({ cart: { cartItems }}) => ({
+const mapStateToProps = ({ cart: { cartItems } }) => ({
     cartItems
 });
 
