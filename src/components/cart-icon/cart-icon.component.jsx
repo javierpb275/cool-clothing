@@ -32,9 +32,10 @@ const mapDispatchToProps = dispatch => ({
 });
 
 
+//we are increasibng the number of the cartIcon everytime a new item is added:
 const mapStateToProps = ({ cart: { cartItems } }) => ({
-    
+    itemCount: cartItems.reduce((accumulatedQuanttity, cartItem) => accumulatedQuanttity + cartItem.quantity, 0)
 });
 
 
-export default connect(null, mapDispatchToProps)(CartIcon);
+export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);
