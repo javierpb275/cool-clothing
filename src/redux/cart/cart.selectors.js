@@ -8,3 +8,10 @@ import { createSelector } from 'reselect';
 
 //input selector:
 const selectCart = state => state.cart;
+
+
+//output selector:
+export const selectCartItems = createSelector(
+    [selectCart],
+    (cart) => cart.cartItems
+);
