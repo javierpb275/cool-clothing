@@ -3,3 +3,8 @@
 
 //RESELECT:
 import { createSelector } from 'reselect';
+
+
+
+//input selector:
+const selectCart = state => state.cart;
