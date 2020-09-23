@@ -18,7 +18,7 @@ export const selectCartItems = createSelector(
 
 //selectCartItemsCount output selector:
 //This gives us back the total quantity of all the cart items:
-export const selectcartItemsCount = createSelector(
+export const selectCartItemsCount = createSelector(
     [selectCartItems],
     cartItems => cartItems.reduce((accumulatedQuanttity, cartItem) => accumulatedQuanttity + cartItem.quantity, 0)
 )
