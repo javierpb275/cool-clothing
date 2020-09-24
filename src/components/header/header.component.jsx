@@ -8,6 +8,13 @@ import { Link } from 'react-router-dom';
 //REDUX:
 import { connect } from 'react-redux';// "connect" is a higher order component that lets us modify our component to have access to things related to redux.
 
+//RESELECT:
+import { createStructuredSelector } from 'reselect';
+
+//SELECTORS:
+import { selectCartHidden } from '../../redux/cart/cart.selectors';//cart
+import { selectCurrentUser } from '../../redux/user/user.selectors';//user
+
 //FIREBASE:
 import { auth } from '../../firebase/firebase.utils';
 
@@ -54,9 +61,13 @@ const Header = ({ currentUser, hidden }) => (
     </div>
 );
 
-const mapStateToProps = ({user: { currentUser }, cart: { hidden } }) => ({
-    currentUser,
-    hidden
-})
+
+
+const mapStateToProps = createStructuredSelector({
+    currentUser: selectCurrentUser,
+    hidden: selectCartHidden
+});
+
+
 
 export default connect(mapStateToProps)(Header);
