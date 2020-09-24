@@ -10,6 +10,9 @@ import { connect } from 'react-redux';
 //ACTIONS:
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
 
+//RESELECT:
+import { createStructuredSelector } from 'reselect';
+
 //SELECTORS:
 import { selectCartItemsCount } from '../../redux/cart/cart.selectors';
 
@@ -35,9 +38,9 @@ const mapDispatchToProps = dispatch => ({
 });
 
 
-//we are increasibng the number of the cartIcon everytime a new item is added:
-const mapStateToProps = state => ({
-    itemCount: selectCartItemsCount(state)
+//we are increasing the number of the cartIcon everytime a new item is added:
+const mapStateToProps = createStructuredSelector({
+    itemCount: selectCartItemsCount
 });
 
 
