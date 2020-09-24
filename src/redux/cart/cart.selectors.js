@@ -21,4 +21,11 @@ export const selectCartItems = createSelector(
 export const selectCartItemsCount = createSelector(
     [selectCartItems],
     cartItems => cartItems.reduce((accumulatedQuanttity, cartItem) => accumulatedQuanttity + cartItem.quantity, 0)
-)
+);
+
+//selectCartHidden output selector:
+//This takes care of hiding or showing the cart-dropdown:
+export const selectCartHidden = createSelector(
+    [selectCart],
+    cart => cart.hidden
+);
