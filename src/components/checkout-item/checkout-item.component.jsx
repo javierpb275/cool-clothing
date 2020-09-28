@@ -16,7 +16,7 @@ const CheckoutItem = () => (
         <span className='name'></span>
         <span className='quantity'></span>
         <span className='price'></span>
-        
+        <div className='remove-button'>&#10054;</div>
     </div>
 );
 
