@@ -23,9 +23,21 @@ const CheckoutItem = ({ cartItem, clearItem }) => {
             <img src={imageUrl} alt='item'/>
         </div>
         
-        <span className='name'>{name}</span>
-        <span className='quantity'>{quantity}</span>
-        <span className='price'>{price}</span>
+        <span className='name'>
+            {name}
+        </span>
+
+        
+        <span className='quantity'>
+        <div className='sign minus'>&#10134;</div>
+        <span className='value'>{quantity}</span>
+        <div className='sign plus'>&#10133;</div>
+        </span>
+        
+
+        <span className='price'>
+            {price}
+        </span>
 
         <div className='remove-button' onClick={() => clearItem(cartItem)}>
             &#10054;
