@@ -16,3 +16,21 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
     return [...cartItems, {...cartItemToAdd, quantity: 1}];
 
 };
+
+
+//This utility function  takes care of removing the item that we select from our cart. 
+//If there is only 1 item, then we remove the whole item.
+//If there are more than 1 item, then we just want to decrease the quantity.
+export const removeItemFromCart = (cartItems, cartItemToRemove) => {
+
+    const existingCartItem = cartItems.find(cartItem => cartItem.id === cartItemToRemove.id);
+
+    if (existingCartItem === 1) {
+        return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id)
+    }
+
+    return cartItems.map(cartItem => cartItem.id === cartItemToRemove.id ?
+        {...cartItem, quantity: cartItem.quantity - 1} 
+        : cartItem); 
+
+}
