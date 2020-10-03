@@ -3,6 +3,9 @@
 //REDUX:
 import { createStore, applyMiddleware } from 'redux';
 
+//REDUX-PERSIST:
+import { persistStore } from 'redux-persist';
+
 //MIDDLEWARE:
 import logger from 'redux-logger';//logger (middleware) catches the action, console logs it out for us and then moves it along
 
@@ -19,6 +22,10 @@ const middlewares = [logger];
 const store = createStore(rootReducer, applyMiddleware(...middlewares));
 
 
+//Persistor:
+const persistor = persistStore(store);
 
-export default store;
+
+
+export default { store, persistor };
 
