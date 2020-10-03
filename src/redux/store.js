@@ -19,11 +19,11 @@ const middlewares = [logger];
 
 
 //Store:
-const store = createStore(rootReducer, applyMiddleware(...middlewares));
+export const store = createStore(rootReducer, applyMiddleware(...middlewares));
 
 
 //Persistor:
-const persistor = persistStore(store);
+export const persistor = persistStore(store);
 
 
 

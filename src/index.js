@@ -8,7 +8,12 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';// Provider: It gives us access to all of the things related to the store object (redux state)
 
 //STORE:
-import store from './redux/store';
+import { store, persistor } from './redux/store';
+
+//persistor: localStorage
+
+//REDUX-PERSIST:
+import { PersistGate } from 'redux-persist/integration/react';//localStorage
 
 //STYLES:
 import './index.css';
@@ -21,7 +26,9 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
     <BrowserRouter>
-    <App />
+    <PersistGate persistor={persistor}>
+      <App/>
+    </PersistGate>
     </BrowserRouter>
     </Provider>
   </React.StrictMode>,
