@@ -4,6 +4,12 @@
 //REDUX:
 import { combineReducers } from 'redux';
 
+//REDUX-PERSIST:
+import { persistReducer } from 'redux-persist';
+
+//STORAGE:
+import storage from 'redux-persist/lib/storage';
+
 //REDUCERS:
 import userReducer from './user/user.reducer';
 import cartReducer from './cart/cart.reducer';
