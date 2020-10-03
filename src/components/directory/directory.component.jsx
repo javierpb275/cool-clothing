@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 //SELECTORS:
-import { selectDirectorySections } from '../../redux/directory/directory.selectors';
+import { selectDirectorySections } from '../../redux/directory/directory.selectors';//These are all our different sections in our shop.
 
 //COMPONENTS:
 import MenuItem from '../menu-item/menu-item.component';
