@@ -12,10 +12,10 @@ import { createStructuredSelector } from 'reselect';
 import { selectCollections } from '../../redux/shop/shop.selectors';
 
 //COMPONENTS:
-import { CollectionPreview } from '../collection-preview/collection-preview.component';
+import CollectionPreview from '../collection-preview/collection-preview.component';
 
 //STYLES:
-import 'collections-overview.styles.scss';
+import './collections-overview.styles.scss';
 
 
 
