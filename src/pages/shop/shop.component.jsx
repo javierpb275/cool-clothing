@@ -13,7 +13,7 @@ import CollectionsOverview from '../../components/collections-overview/collectio
 const ShopPage = ({ match }) => (
 
     <div className='shop-page'>
-        <Route exact path={match.path} component={CollectionsOverview}/>
+        <Route exact path={`${match.path}`} component={CollectionsOverview}/>
     </div>
 
 );
