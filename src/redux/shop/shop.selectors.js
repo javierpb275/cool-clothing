@@ -3,7 +3,7 @@
 import { createSelector } from 'reselect';
 
 
-COLLECTION_ID_MAP = {
+const COLLECTION_ID_MAP = {
     gloves: 1,
     pants: 2,
     jackets: 3,
@@ -22,4 +22,11 @@ const selectShop = state => state.shop;
 export const selectCollections = createSelector(
     [selectShop],
     shop => shop.collections
+);
+
+//selectCollection output selector:
+//This selector is used to get an specific collection (hats) so that we can display some specific items (CollectionPage):
+export const selectCollection = collectionUrlParam => createSelector(
+    [selectCollections],
+    collections => collections.find(collection => collection.id === COLLECTION_ID_MAP[collectionUrlParam])  
 );
