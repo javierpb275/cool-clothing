@@ -8,6 +8,7 @@ import { Route } from 'react-router-dom';
 
 //COMPONENTS:
 import CollectionsOverview from '../../components/collections-overview/collections-overview.component';
+import CategoryPage from '../category/category.component';
 
 
 const ShopPage = ({ match }) => (
