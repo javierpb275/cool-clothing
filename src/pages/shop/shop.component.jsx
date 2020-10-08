@@ -3,14 +3,17 @@
 
 import React from 'react';
 
+//REACT-ROUTER-DOM:
+import { Route } from 'react-router-dom';
+
 //COMPONENTS:
 import CollectionsOverview from '../../components/collections-overview/collections-overview.component';
 
 
-const ShopPage = () => (
+const ShopPage = ({ match }) => (
 
     <div className='shop-page'>
-        <CollectionsOverview/>
+        <Route exact path={match.path} component={CollectionsOverview}/>
     </div>
 
 );
