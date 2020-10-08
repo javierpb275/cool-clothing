@@ -17,7 +17,7 @@ import './collection.styles.scss';
 
 
 const CollectionPage = ({ collection }) => (
-    <div className='collection'>
+    <div className='collection-page'>
         <h2>COLLECTION PAGE</h2>
     </div>
 );
