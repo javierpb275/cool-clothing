@@ -1,5 +1,5 @@
 .collection-item {
-    width: 22%;
+    width: 22vw;//I want this component to be 22% of the width of the actual window. If we decrease or increase the window size it would end up adapting because it always has to be 22% of the total window width.
     display: flex;
     flex-direction: column;
     height: 350px;
