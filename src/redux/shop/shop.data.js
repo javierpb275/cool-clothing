@@ -1,8 +1,8 @@
 //This is the list of all our products, divided by collections (or sections) and each colection has its own objects (product)
 
 
-const SHOP_DATA = [
-    {
+const SHOP_DATA = {
+    gloves: {
       id: 1,
       title: 'gloves',
       routeName: 'gloves',
@@ -33,7 +33,7 @@ const SHOP_DATA = [
         }
       ]
     },
-    {
+    pants: {
       id: 2,
       title: 'pants',
       routeName: 'pants',
@@ -64,7 +64,7 @@ const SHOP_DATA = [
         }
       ]
     },
-    {
+    jackets: {
       id: 3,
       title: 'jackets',
       routeName: 'jackets',
@@ -95,7 +95,7 @@ const SHOP_DATA = [
         }
       ]
     },
-    {
+    boots: {
       id: 4,
       title: 'boots',
       routeName: 'boots',
@@ -126,7 +126,7 @@ const SHOP_DATA = [
         }
       ]
     },
-    {
+    snowboards: {
       id: 5,
       title: 'snowboards',
       routeName: 'snowboards',
@@ -157,6 +157,6 @@ const SHOP_DATA = [
         }
       ]
     }
-  ];
+  };
 
   export default SHOP_DATA;
