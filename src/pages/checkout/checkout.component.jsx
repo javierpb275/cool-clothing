@@ -14,45 +14,50 @@ import CheckoutItem from '../../components/checkout-item/checkout-item.component
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
 
 //STYLES:
-import './checkout.styles.scss';
+import { CheckoutPageContainer, CheckoutHeaderContainer, HeaderBlockContainer, TotalContainer } from './checkout.styles';
 
 
 
 const CheckoutPage = ({ cartItems, total }) => (
-    <div className='checkout-page'>
 
-        <div className='checkout-header'>
+    <CheckoutPageContainer>
 
-            <div className='header-block'>
-                <span>Product</span>
-            </div>
-            <div className='header-block'>
-                <span>Description</span>
-            </div>
-            <div className='header-block'>
-                <span>Quantity</span>
-            </div>
-            <div className='header-block'>
-                <span>Price</span>
-            </div>
-            <div className='header-block'>
-                <span>Remove</span>
-            </div>
+    <CheckoutHeaderContainer>
 
-        </div>
+      <HeaderBlockContainer>
+        <span>Product</span>
+      </HeaderBlockContainer>
+      
+      <HeaderBlockContainer>
+        <span>Description</span>
+      </HeaderBlockContainer>
+
+      <HeaderBlockContainer>
+        <span>Quantity</span>
+      </HeaderBlockContainer>
+
+      <HeaderBlockContainer>
+        <span>Price</span>
+      </HeaderBlockContainer>
+
+      <HeaderBlockContainer>
+        <span>Remove</span>
+      </HeaderBlockContainer>
+
+    </CheckoutHeaderContainer>
 
         {
             cartItems.map(cartItem => (
             <CheckoutItem key={cartItem.id} cartItem={cartItem}/>
         ))}
 
-        <div className='total'>
-            <span>TOTAL: ${total}</span>
-        </div>
+        <TotalContainer>
+           TOTAL: ${total}
+        </TotalContainer>
 
         <StripeCheckoutButton price={total} />
 
-    </div>
+    </CheckoutPageContainer>
 );
 
 
