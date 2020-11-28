@@ -2,9 +2,6 @@
 
 import React from 'react';
 
-//React-Router-Dom:
-import { Link } from 'react-router-dom';
-
 //REDUX:
 import { connect } from 'react-redux';// "connect" is a higher order component that lets us modify our component to have access to things related to redux.
 
@@ -26,48 +23,52 @@ import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import Logo from '../../assets/logo-cool-clothing.png';
 
 //STYLES: 
-import './header.styles.scss';
+import { HeaderContainer, LogoContainer, LogoImg, OptionsContainer, OptionLink, OptionDiv } from './header.styles';
+
 
 const Header = ({ currentUser, hidden }) => (
-    <div className='header'>
+    <HeaderContainer>
 
-        <Link className='logo-container' to='/' >
-        <img  className='logo' alt='logo-img' src={Logo}/>
-        </Link>
+        <LogoContainer  to='/' >
+        <LogoImg alt='logo-img' src={Logo}/>
+        </LogoContainer>
 
 
-        <div className='options'>
+        <OptionsContainer>
 
-        <Link className='option' to='/shop' >
+        <OptionLink to='/shop' >
         SHOP
-        </Link>
+        </OptionLink>
 
-        <Link className='option' to='/shop' >
+        <OptionLink to='/shop' >
         CONTACT
-        </Link>
+        </OptionLink>
+
         {
             currentUser ?
-            <div className='option' onClick={() => auth.signOut()}>SIGN OUT</div>
+            <OptionDiv onClick={() => auth.signOut()}>SIGN OUT</OptionDiv>
             :
-            <Link className='option' to='/signin'>
+            <OptionLink to='/signin'>
                 SIGN IN
-            </Link>
+            </OptionLink>
         }
+
         <CartIcon/>
-        </div>
+
+        </OptionsContainer>
+        
         {
             hidden ? null : <CartDropdown/>
         }
-    </div>
-);
 
+    </HeaderContainer>
+);
 
 
 const mapStateToProps = createStructuredSelector({
     currentUser: selectCurrentUser,
     hidden: selectCartHidden
 });
-
 
 
 export default connect(mapStateToProps)(Header);
