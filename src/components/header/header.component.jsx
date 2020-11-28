@@ -23,7 +23,7 @@ import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import Logo from '../../assets/logo-cool-clothing.png';
 
 //STYLES: 
-import { HeaderContainer, LogoContainer, LogoImg, OptionsContainer, OptionLink, OptionDiv } from './header.styles';
+import { HeaderContainer, LogoContainer, LogoImg, OptionsContainer, OptionLink } from './header.styles';
 
 
 const Header = ({ currentUser, hidden }) => (
@@ -46,7 +46,7 @@ const Header = ({ currentUser, hidden }) => (
 
         {
             currentUser ?
-            <OptionDiv onClick={() => auth.signOut()}>SIGN OUT</OptionDiv>
+            <OptionLink as='div' onClick={() => auth.signOut()}>SIGN OUT</OptionLink>
             :
             <OptionLink to='/signin'>
                 SIGN IN
@@ -56,7 +56,7 @@ const Header = ({ currentUser, hidden }) => (
         <CartIcon/>
 
         </OptionsContainer>
-        
+
         {
             hidden ? null : <CartDropdown/>
         }
