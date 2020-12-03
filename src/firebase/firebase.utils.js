@@ -52,6 +52,14 @@ const config = {
 
   }
 
+  //This function creates the collection using the collectionKey. 
+  //Firebase we'll make this collectionRef object for us 
+  //and if we start adding elements to it as documents then 
+  //firebase will start creating both the collection and the documents inside our firestore.
+  export const addCollectionAndDocuments = (collectionKey, objectsToAdd) => {
+    const collectionRef = firestore.collection(collectionKey);//This will give us back a ref object
+    console.log(collectionRef);
+  }
 
 //Initialize Firebase:
 firebase.initializeApp(config);
