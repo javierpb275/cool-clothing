@@ -14,10 +14,9 @@ import { createStructuredSelector } from 'reselect';
 
 //SELECTORS:
 import { selectCurrentUser } from './redux/user/user.selectors';//user
-import { selectCollectionsForPreview } from './redux/shop/shop.selectors';//shop data
 
 //FIREBASE:
-import { auth, createUserProfileDocument, addCollectionAndDocuments } from './firebase/firebase.utils';// auth: Authentication.
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';// auth: Authentication.
 
 //STYLES:
 import './App.css';
@@ -42,7 +41,7 @@ class App extends React.Component {
 
   //This function takes care of subscribing the user: 
   componentDidMount() {
-    const { setCurrentUser, collectionsArray } = this.props;
+    const { setCurrentUser } = this.props;
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged( async userAuth => {
 
@@ -62,7 +61,6 @@ class App extends React.Component {
       else {
 
         setCurrentUser(userAuth);
-        addCollectionAndDocuments('collections', collectionsArray.map(({title, items}) => ({ title, items })));
 
       }
 
@@ -93,7 +91,6 @@ class App extends React.Component {
 
 const mapstateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
-  collectionsArray: selectCollectionsForPreview
 });
 
 const mapDispatchToProps = dispatch => ({
