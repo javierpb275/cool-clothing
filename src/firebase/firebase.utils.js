@@ -56,9 +56,19 @@ const config = {
   //Firebase we'll make this collectionRef object for us 
   //and if we start adding elements to it as documents then 
   //firebase will start creating both the collection and the documents inside our firestore.
-  export const addCollectionAndDocuments = (collectionKey, objectsToAdd) => {
+  export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
     const collectionRef = firestore.collection(collectionKey);//This will give us back a ref object
     console.log(collectionRef);
+
+    const batch = firestore.batch();
+    objectsToAdd.forEach(obj => {
+      const newDocRef = collectionRef.doc();
+      batch.set(newDocRef, obj);
+
+    });
+
+    return await batch.commit();
+    
   }
 
 //Initialize Firebase:
