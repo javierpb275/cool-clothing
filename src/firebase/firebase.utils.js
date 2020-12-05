@@ -71,6 +71,27 @@ const config = {
     
   }
 
+  //This function gets the whole snapshot object of our collections.
+  //we wanna convert it to an object instead of the array that we get.
+  //This transforms the doc objects (array of wuery snapshot documents)
+  //and we'll return the right object with the right properties and our new routeName property.
+  export const convertCollectionsSnapshotToMap = (collections) => {
+
+    const transformedCollection = collections.docs.map(doc => {
+      const {title, items } = doc.data();
+
+      return {
+        routeName: encodeURI(title.toLowerCase()),
+        id: doc.id,
+        title,
+        items
+      }
+    });
+
+    console.log(transformedCollection);
+
+  }
+
 //Initialize Firebase:
 firebase.initializeApp(config);
 
