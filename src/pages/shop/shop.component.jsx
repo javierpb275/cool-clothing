@@ -11,7 +11,7 @@ import CollectionsOverview from '../../components/collections-overview/collectio
 import CollectionPage from '../collection/collection.component';
 
 //FIRESTORE
-import { firestore } from '../../firebase/firebase.utils';
+import { firestore, convertCollectionsSnapshotToMap } from '../../firebase/firebase.utils';
 
 
 class ShopPage extends React.Component {
@@ -21,7 +21,7 @@ class ShopPage extends React.Component {
         const collectionRef = firestore.collection('collections');
 
         collectionRef.onSnapshot(async snapshot => {
-            console.log(snapshot);
+            convertCollectionsSnapshotToMap(snapshot);
         });
 
     }
