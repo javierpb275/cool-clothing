@@ -19,7 +19,7 @@ export const selectCollections = createSelector(
 //This selector turns our collections object into an array and then we map through each collection (hats, jackets...):
 export const selectCollectionsForPreview = createSelector(
     [selectCollections],
-    collections => Object.keys(collections).map(key => collections[key])
+    collections => collections ? Object.keys(collections).map(key => collections[key]) : []
 );
 
 
@@ -27,5 +27,5 @@ export const selectCollectionsForPreview = createSelector(
 //This selector is used to get an specific collection (hats) so that we can display some specific items (CollectionPage):
 export const selectCollection = collectionUrlParam => createSelector(
     [selectCollections],
-    collections => collections[collectionUrlParam] 
+    collections => (collections ? collections[collectionUrlParam] : null)
 );
