@@ -38,7 +38,7 @@ export const selectIsCollectionFetching = createSelector(
 
 //this selector determines and returns a boolean value of whether or not our collection is null or not
 //!!: get the boolean value
-export const selectIsCollectionLoading = createSelector(
+export const selectIsCollectionsLoaded = createSelector(
     [selectShop],
     shop => !!shop.collections
 );

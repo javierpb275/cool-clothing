@@ -1,4 +1,6 @@
-//CONTAINER PATTERN:
+//COLLECTIONS OVERVIEW CONTAINER:
+
+//containers do not render anything. They just pass props down to components:
 
 //Container for the collection-overview component
 
