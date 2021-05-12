@@ -14,7 +14,7 @@ import CollectionsOverviewContainer from '../../components/collections-overview/
 import CollectionPageContainer from '../collection/collection.container';
 
 //SHOP ACTIONS:
-import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
+import { fetchCollectionsStart } from '../../redux/shop/shop.actions';//this actions fires the saga fetchCollectionsAsync()
 
 
 class ShopPage extends React.Component {
