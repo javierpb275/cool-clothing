@@ -11,7 +11,7 @@ import logger from 'redux-logger';//logger (middleware) catches the action, cons
 import createSagaMiddleware from 'redux-saga';//we replace thunks with redux saga to handle our asynchronous actions inside of redux.
 
 //SAGAS:
-import {fetchCollectionsStart} from './shop/shop.sagas';
+import rootSaga from './root-saga';
 
 //REDUCERS:
 import rootReducer from './root-reducer';
@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === 'development') {
 //Store:
 export const store = createStore(rootReducer, applyMiddleware(...middlewares));
 
-sagaMiddleware.run(fetchCollectionsStart);
+sagaMiddleware.run(rootSaga);
 
 //Persistor:
 export const persistor = persistStore(store);
