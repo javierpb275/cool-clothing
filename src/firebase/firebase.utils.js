@@ -107,12 +107,12 @@ export const firestore = firebase.firestore();
 
 
 //This gives us access to this new GoogleAuthProvider class from the authentication library:
-const provider = new firebase.auth.GoogleAuthProvider();
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
 
 //Always trigger the Google pop up whenever we use this GoogleAuthProvider for authentication and sign in:
-provider.setCustomParameters({ prompt: 'select_account' });
+googleProvider.setCustomParameters({ prompt: 'select_account' });
 
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
 
 
 //In case we want the whole library:
