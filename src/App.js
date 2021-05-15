@@ -6,17 +6,11 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 //REDUX:
 import { connect } from 'react-redux';
 
-//REDUX ACTIONS:
-import { setCurrentUser } from './redux/user/user.actions';
-
 //RESELECT:
 import { createStructuredSelector } from 'reselect';
 
 //SELECTORS:
 import { selectCurrentUser } from './redux/user/user.selectors';//user
-
-//FIREBASE:
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';// auth: Authentication.
 
 //STYLES:
 import './App.css';
@@ -41,7 +35,6 @@ class App extends React.Component {
 
   //This function takes care of subscribing the user: 
   componentDidMount() {
-    const { setCurrentUser } = this.props;
 /*
     this.unsubscribeFromAuth = auth.onAuthStateChanged( async userAuth => {
 
@@ -93,8 +86,4 @@ const mapstateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
 });
 
-const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user))
-});
-
-export default connect(mapstateToProps, mapDispatchToProps)(App);
+export default connect(mapstateToProps)(App);
