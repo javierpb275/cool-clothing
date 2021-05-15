@@ -1,7 +1,8 @@
 //takeEvery listens for every action of a specific type that we pass to it
+//takeLatest: we only wanna use this API call one time. 
 //call is the effect inside of our generator function that invokes the method
 //put is the saga effect for creating actions
-import {takeEvery, call, put}from 'redux-saga/effects';
+import {takeLatest, call, put}from 'redux-saga/effects';
 import ShopActionTypes from './shop.types'; //we are listening for specific action types
 
 //FIRESTORE
@@ -30,5 +31,7 @@ export function* fetchCollectionsAsync() {
 
 //this saga is gonna pause whenever a specific actions type that we want comes in:
 export function* fetchCollectionsStart() {
-    yield takeEvery(ShopActionTypes.FETCH_COLLECTIONS_START, fetchCollectionsAsync);
+    //We only wanna use this API call one time. The last one is gonna get the most up to date data from our database. 
+    //Using takeLatest is the best option
+    yield takeLatest(ShopActionTypes.FETCH_COLLECTIONS_START, fetchCollectionsAsync);
 }
