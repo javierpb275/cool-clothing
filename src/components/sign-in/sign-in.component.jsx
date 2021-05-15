@@ -10,11 +10,8 @@ import { connect } from 'react-redux';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
-//FIREBASE:
-import { auth } from '../../firebase/firebase.utils';//Authentication
-
 //Actions:
-import { googleSignInStart } from '../../redux/user/user.actions';
+import { googleSignInStart, emailSignInStart } from '../../redux/user/user.actions';
 
 //STYLES:
 import {SignInContainer, SignInTitle, ButtonsBarContainer} from './sign-in.styles';
@@ -31,24 +28,10 @@ class SignIn extends React.Component {
     //handleSubmit prevents the default submit action from firing and then we will clear out our fields 
     handleSubmit = async event => {
         event.preventDefault();
-
+        const { emailSignInStart } = this.props;
         const { email, password } = this.state;
 
-        try {
-
-            await auth.signInWithEmailAndPassword(email, password);
-
-            this.setState({ email: '', password: '' });
-
-        }
-
-        catch(error) {
-
-            console.log(error);
-
-        }
-
-        
+        emailSignInStart(email, password);
     };
 
     //handleChange gets the input by the name (name="email") and changes its value (what the user types in)
@@ -95,7 +78,8 @@ class SignIn extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  googleSignInStart: () => dispatch(googleSignInStart())
+  googleSignInStart: () => dispatch(googleSignInStart()),
+  emailSignInStart: (email, password) => dispatch(emailSignInStart({email, password}))
 });
 
 export default connect(null,mapDispatchToProps)(SignIn);
