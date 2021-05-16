@@ -2,7 +2,7 @@
 //takeLatest: we only wanna use this API call one time. 
 //call is the effect inside of our generator function that invokes the method
 //put is the saga effect for creating actions
-import {takeLatest, call, put}from 'redux-saga/effects';
+import {takeLatest, call, put, all}from 'redux-saga/effects';
 import ShopActionTypes from './shop.types'; //we are listening for specific action types
 
 //FIRESTORE
@@ -35,3 +35,7 @@ export function* fetchCollectionsStart() {
     //Using takeLatest is the best option
     yield takeLatest(ShopActionTypes.FETCH_COLLECTIONS_START, fetchCollectionsAsync);
 }
+
+export function* shopSagas() {
+    yield all([call(fetchCollectionsStart)]);
+  }
