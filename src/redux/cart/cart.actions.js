@@ -25,3 +25,8 @@ export const clearItemFromCart = item => ({
     type: CartActionTypes.CLEAR_ITEM_FROM_CART,
     payload: item
 });
+
+//This action clears the cart after the user has signed out:
+export const clearCart = () => ({
+    type: CartActionTypes.CLEAR_CART
+  });
