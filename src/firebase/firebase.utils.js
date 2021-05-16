@@ -15,6 +15,9 @@ const config = {
     measurementId: "G-3YJLXHG89M"
   };
 
+//Initialize Firebase:
+firebase.initializeApp(config);
+
   //This function allows us to take that user auth object that we got back from our authentication library 
   //and store it inside of our database
   export const createUserProfileDocument = async (userAuth, additionalData) => {
@@ -95,16 +98,22 @@ const config = {
 
   }
 
-//Initialize Firebase:
-firebase.initializeApp(config);
-
+  //mimicking functionality that you may encounter when you don't have firebase as the backend:
+  export const getCurrentUser = () => {
+    //return a promise oriented solution that our sagas can yield for
+    return new Promise((resolve, reject) => {
+      const unsubscribe = auth.onAuthStateChanged(userAuth => {
+        unsubscribe();
+        resolve(userAuth);
+      }, reject);
+    });
+  };
 
 //Firebase authentication:
 export const auth = firebase.auth();
 
 //Firebase database:
 export const firestore = firebase.firestore();
-
 
 //This gives us access to this new GoogleAuthProvider class from the authentication library:
 export const googleProvider = new firebase.auth.GoogleAuthProvider();

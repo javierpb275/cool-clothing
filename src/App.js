@@ -12,6 +12,9 @@ import { createStructuredSelector } from 'reselect';
 //SELECTORS:
 import { selectCurrentUser } from './redux/user/user.selectors';//user
 
+//ACTIONS:
+import { checkUserSession } from './redux/user/user.actions';
+
 //STYLES:
 import './App.css';
 
@@ -35,30 +38,8 @@ class App extends React.Component {
 
   //This function takes care of subscribing the user: 
   componentDidMount() {
-/*
-    this.unsubscribeFromAuth = auth.onAuthStateChanged( async userAuth => {
-
-      if (userAuth) {
-
-        const userRef = await createUserProfileDocument(userAuth);
-
-        userRef.onSnapshot( snapShot => {
-          setCurrentUser({
-              id: snapShot.id,
-              ...snapShot.data()
-            })
-        });
-
-      }
-
-      else {
-
-        setCurrentUser(userAuth);
-
-      }
-
-    });
-*/
+    const { checkUserSession } = this.props;
+    checkUserSession();
   }
 
   //This function takes care of unsubscribing the user:
@@ -86,4 +67,8 @@ const mapstateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
 });
 
-export default connect(mapstateToProps)(App);
+const mapDispatchToProps = dispatch => ({
+  checkUserSession: () => dispatch(checkUserSession())
+});
+
+export default connect(mapstateToProps, mapDispatchToProps)(App);

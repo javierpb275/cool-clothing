@@ -12,7 +12,7 @@ import {
   } from './user.actions';
 
 //Firebase utils:
-import {auth, googleProvider, createUserProfileDocument} from '../../firebase/firebase.utils';
+import {auth, googleProvider, createUserProfileDocument, getCurrentUser} from '../../firebase/firebase.utils';
 
 //get snapshot from user authentication:
 export function* getSnapshotFromUserAuth(userAuth, additionalData) {
@@ -55,6 +55,21 @@ export function* signInWithEmail({ payload: { email, password } }) {
 
 export function* onEmailSignInStart() {
   yield takeLatest(UserActionTypes.EMAIL_SIGN_IN_START, signInWithEmail);
+}
+
+//check user session:
+export function* isUserAuthenticated() {
+  try {
+    const userAuth = yield getCurrentUser();
+    if (!userAuth) return;
+    yield getSnapshotFromUserAuth(userAuth);
+  } catch (error) {
+    yield put(signInFailure(error));
+  }
+}
+
+export function* onCheckUserSession() {
+  yield takeLatest(UserActionTypes.CHECK_USER_SESSION, isUserAuthenticated);
 }
 
 //user sagas:
