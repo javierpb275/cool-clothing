@@ -1,7 +1,6 @@
 //This component is a signin form wuere the user can sign in with its user account or with the google account by using firebase
-//It is a class component because we have to store what user is typing in.
 
-import React from 'react';
+import React, {useState} from 'react';
 
 //react-redux
 import { connect } from 'react-redux';
@@ -16,52 +15,41 @@ import { googleSignInStart, emailSignInStart } from '../../redux/user/user.actio
 //STYLES:
 import {SignInContainer, SignInTitle, ButtonsBarContainer} from './sign-in.styles';
 
-class SignIn extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            email: '',
-            password: ''
-        }
-    }
+const SignIn = ({emailSignInStart, googleSignInStart}) => {
 
-    //handleSubmit prevents the default submit action from firing and then we will clear out our fields 
-    handleSubmit = async event => {
+  const [userCredentials, setUserCredentials] = useState({email:'', password:''});
+  const { email, password } = userCredentials;
+
+    const handleSubmit = async event => {
         event.preventDefault();
-        const { emailSignInStart } = this.props;
-        const { email, password } = this.state;
-
         emailSignInStart(email, password);
     };
 
-    //handleChange gets the input by the name (name="email") and changes its value (what the user types in)
-    handleChange = event => {
+    const handleChange = event => {
         const { value, name } = event.target;
-        
-        this.setState({[name]: value})
+        setUserCredentials({...userCredentials, [name]: value})
     }
 
-    render() {
-      const { googleSignInStart } = this.props;
-        return(
-            <SignInContainer>
+ 
+  return(
+        <SignInContainer>
         <SignInTitle>I already have an account</SignInTitle>
         <span>Sign in with your email and password</span>
 
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <FormInput
             name='email'
             type='email'
-            handleChange={this.handleChange}
-            value={this.state.email}
+            handleChange={handleChange}
+            value={email}
             label='email'
             required
           />
           <FormInput
             name='password'
             type='password'
-            value={this.state.password}
-            handleChange={this.handleChange}
+            value={password}
+            handleChange={handleChange}
             label='password'
             required
           />
@@ -73,8 +61,7 @@ class SignIn extends React.Component {
           </ButtonsBarContainer>
         </form>
       </SignInContainer>
-        );
-    }
+  );
 }
 
 const mapDispatchToProps = dispatch => ({
