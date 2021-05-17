@@ -1,6 +1,6 @@
 //This component is the page of each collection (hats, snowboards, gloves...) where we display only that kind of item (ex: hats page):
 
-import React from 'react';
+import React, {useEffect} from 'react';
 
 //REACT-REDUX:
 import { connect } from 'react-redux';
@@ -14,23 +14,42 @@ import CollectionItem from '../../components/collection-item/collection-item.com
 //STYLES:
 import { CollectionPageContainer, CollectionTitle, CollectionItemsContainer } from './collection.styles';
 
-
+//FIRESTORE:
+import {firestore} from '../../firebase/firebase.utils';
 
 const CollectionPage = ({ collection }) => {
-    const { title, items } = collection;
-    return(
-        <CollectionPageContainer>
 
-        <CollectionTitle>{title}</CollectionTitle>
+  useEffect(() => {
+
+    console.log('I am subscribing');
+
+    const unsubscribeFromCollections = firestore
+    .collection('collections')
+    .onSnapshot(snapshot => console.log(snapshot))
+
+    //This is a cleanup function. It's a useEffect calls when the component unmounts (componentWillUnmount())
+    return () => {
+      console.log('I am unsubscribing');
+      unsubscribeFromCollections();
+    }
+
+  }, [])
+
+  const { title, items } = collection;
+
+  return(
+    <CollectionPageContainer>
+
+      <CollectionTitle>{title}</CollectionTitle>
         
-        <CollectionItemsContainer>
-          {items.map(item => (
-            <CollectionItem key={item.id} item={item} />
-          ))}
-        </CollectionItemsContainer>
+      <CollectionItemsContainer>
+        {items.map(item => (
+          <CollectionItem key={item.id} item={item} />
+        ))}
+      </CollectionItemsContainer>
 
-      </CollectionPageContainer>
-    );
+    </CollectionPageContainer>
+  );
 };
 
 
