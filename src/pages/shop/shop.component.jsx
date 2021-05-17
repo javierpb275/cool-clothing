@@ -1,7 +1,7 @@
 //This shop page displays previews of our collections (hats, sneakers, etc). Because we need to store the data related to our collections on our shop page, our shop page is a class component.
 //In this page we are displaying all the collection with its items by mapping through them
 
-import React from 'react';
+import React, {useEffect} from 'react';
 
 //REACT-ROUTER-DOM:
 import { Route } from 'react-router-dom';
@@ -17,25 +17,20 @@ import CollectionPageContainer from '../collection/collection.container';
 import { fetchCollectionsStart } from '../../redux/shop/shop.actions';//this actions fires the saga fetchCollectionsAsync()
 
 
-class ShopPage extends React.Component {
+const ShopPage = ({match, fetchCollectionsStart}) => {
 
-    componentDidMount() {
-        const {fetchCollectionsStart} = this.props;
-        fetchCollectionsStart();
-    }
+    useEffect(() => {
+       fetchCollectionsStart();
+    }, [fetchCollectionsStart]);
 
-    render() {
-        const { match } = this.props;
-        return (
-            <div className='shop-page'>
-                <Route exact path={`${match.path}`}  component={CollectionsOverviewContainer}/>
-                <Route path={`${match.path}/:collectionId`} component={CollectionPageContainer}/>
-            </div>
-        );
-    }
-} 
+    return (
+        <div className='shop-page'>
+            <Route exact path={`${match.path}`}  component={CollectionsOverviewContainer}/>
+            <Route path={`${match.path}/:collectionId`} component={CollectionPageContainer}/>
+        </div>
+    );
+}
 
-    
 const mapDispatchToProps = dispatch => ({
     fetchCollectionsStart: () => dispatch(fetchCollectionsStart())
 });
